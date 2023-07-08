@@ -99,3 +99,13 @@ std::vector<std::vector<char>> Game::boardMatrix()
 
 	return board;
 }
+
+int Game::getHeight()
+{
+	return height;
+}
+
+int Game::getWidth()
+{
+	return width;
+}

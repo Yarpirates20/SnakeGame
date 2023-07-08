@@ -14,15 +14,18 @@ class Game
 private:
 	int height;
 	int width;
-	Snake snake;
 	
 
 public:
+
+	Snake snake;
 
 	Game() = default;
 	Game(int h, int w);
 	void render();
 	std::vector<std::vector<char>> boardMatrix();
+	int getHeight();
+	int getWidth();
 
 };
 

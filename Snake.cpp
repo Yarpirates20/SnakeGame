@@ -16,11 +16,11 @@ std::list<std::tuple<int, int>> Snake::getBody()
 
 // Return vector after adding coordinates and direction
 // Use vec.push_back(position) to add position to bac
-std::list<std::tuple<int, int>> Snake::takeStep(std::list<std::tuple<int, int>>bodyVec, tuple<int,int> position)
+std::list<std::tuple<int, int>> Snake::takeStep(/*std::list<std::tuple<int, int>>bodyVec,*/ tuple<int,int> position)
 {
-	bodyVec.push_front(position);
-	bodyVec.pop_back();
-	return bodyVec;
+	body.push_front(position);
+	body.pop_back();
+	return body;
 }
 
 std::tuple<int, int> Snake::setDirection(std::tuple<int, int> dir)
