@@ -42,36 +42,36 @@ void Game::render()
 					{
 						cout << 'X';
 					}
-					
+
 					cout << 'O';
 				}
 			}*/
 			/*auto cIt = *std::find(bList.begin(), bList.end(), c);
 			auto rIt = *std::find(bList.begin(), bList.end(), r);*/
-			auto t = make_tuple(c, r);
+			//auto t = make_tuple(c, r);
 
-			auto it = find(bList.begin(), bList.end(), t); /*)
-				{
+			//auto it = find(bList.begin(), bList.end(), t); /*)
+				/*{
 					return get<0>(t) == get<0>(item)
 						&& get<1>(t) == get<1>(item);
 				});*/
 
-			if (it != bList.end())
-			{
-				if (it == bList.begin())
+				/*if (it != bList.end())
 				{
-					cout << 'X';
+					if (it == bList.begin())
+					{
+						cout << 'X';
+					}
+					else
+					{
+						cout << 'O';
+					}
 				}
 				else
-				{
-					cout << 'O';
-				}
-			}
-			else
-			{
+				{*/
 
-				cout << matrix[r][c];
-			}
+			cout << matrix[r][c];
+			//}
 		}
 
 		// Right border
@@ -88,12 +88,48 @@ void Game::render()
 std::vector<std::vector<char>> Game::boardMatrix()
 {
 	vector<vector<char>> board(height, vector<char>(width));
+	auto bList = snake.getBody();
+	auto head = snake.head();
+
 
 	for (int row = 0; row < height; row++)
 	{
 		for (int col = 0; col < width; col++)
 		{
-			board[row][col] = ' ';
+			/*for (auto it = bList.begin(); it != bList.end(); it++)
+			{
+				int xcoord, ycoord;
+
+				xcoord = std::get<0>(*it);
+				ycoord = std::get<1>(*it);
+			}*/
+
+			auto t = make_tuple(col, row);
+
+			auto it = find(bList.begin(), bList.end(), t); /*)
+				{
+					return get<0>(t) == get<0>(item)
+						&& get<1>(t) == get<1>(item);
+				});*/
+
+			if (it != bList.end())
+			{
+				if (it == bList.begin())
+				{
+					board[row][col] = 'X';
+				}
+				else
+				{
+					board[row][col] = 'O';
+				}
+			}
+			else
+			{
+
+				//cout << matrix[r][c];
+				board[row][col] = ' ';
+			}
+
 		}
 	}
 

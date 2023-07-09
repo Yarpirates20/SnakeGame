@@ -41,6 +41,24 @@ int main()
 			game.snake.setDirection(UP);
 			game.snake.takeStep(newHead);
 			break;
+
+		case 's':
+			y = ((y + 1) % game.getHeight()) + game.getHeight();
+			newHead = make_tuple(x, y);
+			game.snake.setDirection(DOWN);
+			game.snake.takeStep(newHead);
+
+		case 'a':
+			x = ((x - 1) % game.getHeight()) + game.getHeight();
+			newHead = make_tuple(x, y);
+			game.snake.setDirection(LEFT);
+			game.snake.takeStep(newHead);
+
+		case 'd':
+			x = ((x + 1) % game.getHeight()) + game.getHeight();
+			newHead = make_tuple(x, y);
+			game.snake.setDirection(RIGHT);
+			game.snake.takeStep(newHead);
 		default:
 			break;
 		}
