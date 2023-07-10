@@ -6,15 +6,15 @@ Game::Game(int h, int w)
 {
 	height = h;
 	width = w;
-	snake = Snake({ {0, 0}, {0, 1}, {1, 1}, {1, 2} }, UP);
+	snake = Snake({ {0, 0}, {0, 1}, {0, 2}, {0, 3} }, UP);
 
 }
 
 void Game::render()
 {
 	// Body of snake variable
-	auto bList = snake.getBody();
-	auto head = snake.head();
+	/*auto bList = snake.getBody();
+	auto head = snake.head();*/
 
 	//int borderLength = width + 2;
 	vector<vector<char>> matrix = boardMatrix();
@@ -104,7 +104,7 @@ std::vector<std::vector<char>> Game::boardMatrix()
 				ycoord = std::get<1>(*it);
 			}*/
 
-			auto t = make_tuple(col, row);
+			auto t = make_tuple(row, col);
 
 			auto it = find(bList.begin(), bList.end(), t); /*)
 				{
@@ -114,7 +114,7 @@ std::vector<std::vector<char>> Game::boardMatrix()
 
 			if (it != bList.end())
 			{
-				if (it == bList.begin())
+				if (*it == bList.front())
 				{
 					board[row][col] = 'X';
 				}

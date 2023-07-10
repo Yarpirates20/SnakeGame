@@ -36,26 +36,26 @@ int main()
 		switch (tolower(direction))
 		{
 		case 'w':
-			y = ((y - 1) % game.getHeight()) + game.getHeight();
-			newHead = make_tuple(x, y);
+			x = ((x - 1) % game.getHeight());
+			newHead = make_tuple(x,y);
 			game.snake.setDirection(UP);
 			game.snake.takeStep(newHead);
 			break;
 
 		case 's':
-			y = ((y + 1) % game.getHeight()) + game.getHeight();
+			x = ((x + 1) % game.getHeight());
 			newHead = make_tuple(x, y);
 			game.snake.setDirection(DOWN);
 			game.snake.takeStep(newHead);
 
 		case 'a':
-			x = ((x - 1) % game.getHeight()) + game.getHeight();
+			y = ((y - 1) % game.getWidth());
 			newHead = make_tuple(x, y);
 			game.snake.setDirection(LEFT);
 			game.snake.takeStep(newHead);
 
 		case 'd':
-			x = ((x + 1) % game.getHeight()) + game.getHeight();
+			y = ((y + 1) % game.getWidth());
 			newHead = make_tuple(x, y);
 			game.snake.setDirection(RIGHT);
 			game.snake.takeStep(newHead);

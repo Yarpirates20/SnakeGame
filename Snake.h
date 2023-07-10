@@ -5,10 +5,10 @@
 #include <list>
 using namespace std;
 
-const std::tuple<int, int> UP = make_tuple(0, 1);
-const std::tuple<int, int> DOWN = make_tuple(0, -1);
-const std::tuple<int, int> LEFT = make_tuple(-1, 0);
-const std::tuple<int, int> RIGHT = make_tuple(1, 0);
+const std::tuple<int, int> UP = make_tuple(-1, 0);
+const std::tuple<int, int> DOWN = make_tuple(1, 0);
+const std::tuple<int, int> LEFT = make_tuple(0, -1);
+const std::tuple<int, int> RIGHT = make_tuple(0, 1);
 
 class Snake
 {
