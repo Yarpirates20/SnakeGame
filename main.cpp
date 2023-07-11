@@ -36,26 +36,33 @@ int main()
 		switch (tolower(direction))
 		{
 		case 'w':
-			x = ((x - 1) % game.getHeight());
+			/*x = (((x - game.getHeight()) - 1) % game.getHeight());*/
+			x = 1 + (x - 1 + -1) % game.getHeight();
 			newHead = make_tuple(x,y);
 			game.snake.setDirection(UP);
 			game.snake.takeStep(newHead);
 			break;
 
 		case 's':
-			x = ((x + 1) % game.getHeight());
+			/*x = (((x - game.getHeight()) + 1) % game.getHeight());*/
+			x = 1 + (x - 1 + 1) % game.getHeight();
+			//x = ((x + 1) % game.getHeight());
 			newHead = make_tuple(x, y);
 			game.snake.setDirection(DOWN);
 			game.snake.takeStep(newHead);
 
 		case 'a':
-			y = ((y - 1) % game.getWidth());
+			//y = ((y - 1) % game.getWidth());
+			//y = (((y - game.getWidth()) - 1) % game.getWidth());
+			y = 1 + (y - 1 + (-1)) % game.getWidth();
 			newHead = make_tuple(x, y);
 			game.snake.setDirection(LEFT);
 			game.snake.takeStep(newHead);
 
 		case 'd':
-			y = ((y + 1) % game.getWidth());
+			//y = ((y + 1) % game.getWidth());
+			//y = (((game.getWidth() - y) + 1) % game.getWidth());
+			y = 1 + (y - 1 + (1)) % game.getWidth();
 			newHead = make_tuple(x, y);
 			game.snake.setDirection(RIGHT);
 			game.snake.takeStep(newHead);
@@ -66,6 +73,7 @@ int main()
 		cout << "\u001b[2J";
 
 		game.render();
+
 	}
 
 	return 0;
