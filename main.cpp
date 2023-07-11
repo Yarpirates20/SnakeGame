@@ -22,12 +22,12 @@ int main()
 		cout << "\n\nDirection: ";
 		cin >> direction;
 
-		while (tolower(direction) != 'w' && tolower(direction) != 'a' && tolower(direction) != 's' && tolower(direction) != 'd')
-		{
-			cout << "\nError: Invalid entry.\n"
-				<< "Type direction key and press ENTER: ";
-			cin >> direction;
-		}
+		//while (tolower(direction) != 'w' && tolower(direction) != 'a' && tolower(direction) != 's' && tolower(direction) != 'd')
+		//{
+		//	cout << "\nError: Invalid entry.\n"
+		//		<< "Type direction key and press ENTER: ";
+		//	cin >> direction;
+		//}
 
 		int x = get<0>(game.snake.head());
 		int y = get<1>(game.snake.head());
@@ -99,6 +99,10 @@ int main()
 			}
 
 		default:
+			x = 1 + (x - 1 + (get<0>(game.snake.getDirection()))) % game.getHeight();
+			x = 1 + (x - 1 + (get<1>(game.snake.getDirection()))) % game.getWidth();
+			newHead = make_tuple(x, y);
+			game.snake.takeStep(newHead);
 			break;
 		}
 
