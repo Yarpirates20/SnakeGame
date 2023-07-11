@@ -106,6 +106,25 @@ int main()
 			break;
 		}
 
+		// ###############################################
+		// TODO: Check if each x, y part of tuple, or each tuple, is equal to the first one or any other ones
+		// 
+		//auto t = make_tuple(x, y);
+
+		//auto it = find(game.snake.getBody().begin(), game.snake.getBody().end(), t);
+
+		//if (it != game.snake.getBody().end())
+		//{
+		//	if ( *it != game.snake.head())
+		//	{
+		//		if (*it == newHead)
+		//		{
+		//			cout << "\nYou made one wrong move and died. Welcome to the real world.\n";
+		//			break;
+		//		}
+		//	}
+		//}
+
 		cout << "\u001b[2J";
 
 		game.render();
