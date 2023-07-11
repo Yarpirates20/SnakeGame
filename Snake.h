@@ -25,6 +25,7 @@ public:
 	std::list<std::tuple<int, int>> getBody();
 	std::list<std::tuple<int, int>> takeStep(/*std::list<std::tuple<int, int>>bodyVec,*/ std::tuple<int, int> dir);
 	std::tuple<int, int> setDirection(std::tuple<int, int> dir);
+	std::tuple<int, int> getDirection();
 	std::tuple<int, int> head(/*std::list<std::tuple<int,int>> bList*/);
 	//int getXcoord()
 };

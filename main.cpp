@@ -37,35 +37,67 @@ int main()
 		{
 		case 'w':
 			/*x = (((x - game.getHeight()) - 1) % game.getHeight());*/
-			x = 1 + (x - 1 + -1) % game.getHeight();
-			newHead = make_tuple(x,y);
-			game.snake.setDirection(UP);
-			game.snake.takeStep(newHead);
-			break;
+			if (game.snake.getDirection() == DOWN)
+			{
+				break;
+			}
+			else
+			{
+				x = 1 + (x - 1 + -1) % game.getHeight();
+				newHead = make_tuple(x, y);
+				game.snake.setDirection(UP);
+				game.snake.takeStep(newHead);
+				break;
+			}
 
 		case 's':
 			/*x = (((x - game.getHeight()) + 1) % game.getHeight());*/
-			x = 1 + (x - 1 + 1) % game.getHeight();
-			//x = ((x + 1) % game.getHeight());
-			newHead = make_tuple(x, y);
-			game.snake.setDirection(DOWN);
-			game.snake.takeStep(newHead);
+			if (game.snake.getDirection() == UP)
+			{
+				break;
+			} 
+			else
+			{
+				x = 1 + (x - 1 + 1) % game.getHeight();
+				//x = ((x + 1) % game.getHeight());
+				newHead = make_tuple(x, y);
+				game.snake.setDirection(DOWN);
+				game.snake.takeStep(newHead);
+				break;
+			}
 
 		case 'a':
 			//y = ((y - 1) % game.getWidth());
 			//y = (((y - game.getWidth()) - 1) % game.getWidth());
-			y = 1 + (y - 1 + (-1)) % game.getWidth();
-			newHead = make_tuple(x, y);
-			game.snake.setDirection(LEFT);
-			game.snake.takeStep(newHead);
+			if (game.snake.getDirection() == RIGHT)
+			{
+				break;
+			}
+			else
+			{
+				y = 1 + (y - 1 + (-1)) % game.getWidth();
+				newHead = make_tuple(x, y);
+				game.snake.setDirection(LEFT);
+				game.snake.takeStep(newHead);
+				break;
+			}
 
 		case 'd':
 			//y = ((y + 1) % game.getWidth());
 			//y = (((game.getWidth() - y) + 1) % game.getWidth());
-			y = 1 + (y - 1 + (1)) % game.getWidth();
-			newHead = make_tuple(x, y);
-			game.snake.setDirection(RIGHT);
-			game.snake.takeStep(newHead);
+			if (game.snake.getDirection() == LEFT)
+			{
+				break;
+			}
+			else
+			{
+				y = 1 + (y - 1 + (1)) % game.getWidth();
+				newHead = make_tuple(x, y);
+				game.snake.setDirection(RIGHT);
+				game.snake.takeStep(newHead);
+				break;
+			}
+
 		default:
 			break;
 		}

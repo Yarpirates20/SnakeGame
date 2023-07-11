@@ -29,6 +29,11 @@ std::tuple<int, int> Snake::setDirection(std::tuple<int, int> dir)
 	return direction;
 }
 
+std::tuple<int, int> Snake::getDirection()
+{
+	return direction;
+}
+
 std::tuple<int, int> Snake::head(/*list<tuple<int,int>> bList*/)
 {
 
