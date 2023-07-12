@@ -106,6 +106,35 @@ int main()
 			break;
 		}
 
+		
+		// Copy body to vector for comparison
+		vector<tuple<int, int>> snakeVec;
+
+		for (auto it : game.snake.getBody())
+		{
+			snakeVec.push_back(it);
+		}
+
+		for (int i = 0; i < snakeVec.size(); i++)
+		{
+			if (i != 0)
+			{
+				if (get<0>(snakeVec[i]) == get<0>(game.snake.head()) && get<1>(snakeVec[i]) == get<1>(game.snake.head()))
+				{
+					cout << "\nYou've made one wrong move and instantly died. Welcome to real life.\n";
+					break;
+				}
+				else
+				{
+					cout << "\u001b[2J";
+					game.render();
+				}
+			}
+
+		}
+
+
+
 		// ###############################################
 		// TODO: Check if each x, y part of tuple, or each tuple, is equal to the first one or any other ones
 		// 
@@ -124,10 +153,9 @@ int main()
 		//		}
 		//	}
 		//}
-
 		cout << "\u001b[2J";
-
 		game.render();
+
 
 	}
 
