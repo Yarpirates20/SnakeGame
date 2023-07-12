@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Game.h"
 #include "Snake.h"
+#include "Apple.h"
 using namespace std;
 
 int main()
