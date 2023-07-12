@@ -4,15 +4,19 @@ class Apple
 {
 
 private:
-	const char apple = '\x3';
+	char apple;
 	int points;
+	int appleRow;
+	int appleCol;
 
 
 public:
-	Apple() = default;
-	Apple(char a, int p);
+	Apple();
 	void addToPoints();
 	int getPointTotal();
-	std::tuple<int, int> setAppleLocation();
+	void setAppleLocation(int h, int w);
+	int getAppleRow();
+	int getAppleCol();
+	bool isEaten();
 };
 
