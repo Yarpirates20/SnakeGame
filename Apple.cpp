@@ -1,10 +1,24 @@
 #include "Apple.h"
+#include <cstdlib>
+#include <ctime>
 
-Apple::Apple()
+Apple::Apple(int height, int width)
 {
-	char a = '\x3';
-	int p = 0;
+	char a = '*';
+	/*int p = 0;*/
 
 	apple = a;
-	points = p;
+	/*points = p;*/
+	appleRow = rand() % height;
+	appleCol = rand() % width;
+}
+
+int Apple::getAppleRow()
+{
+	return appleRow;
+}
+
+int Apple::getAppleCol()
+{
+	return appleCol;
 }

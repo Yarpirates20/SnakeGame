@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Apple.h"
 #include <iostream>
 using namespace std;
 
@@ -7,6 +8,7 @@ Game::Game(int h, int w)
 	height = h;
 	width = w;
 	snake = Snake({ {0, 0}, {0, 1}, {0, 2}, {0, 3} }, UP);
+	apple = Apple(height, width);
 
 }
 
@@ -90,6 +92,9 @@ std::vector<std::vector<char>> Game::boardMatrix()
 	vector<vector<char>> board(height, vector<char>(width));
 	auto bList = snake.getBody();
 	auto head = snake.head();
+	int appleX = apple.getAppleRow();
+	int appleY = apple.getAppleCol();
+	
 
 
 	for (int row = 0; row < height; row++)
@@ -132,6 +137,13 @@ std::vector<std::vector<char>> Game::boardMatrix()
 
 		}
 	}
+
+	while (board[appleX][appleY] != ' ')
+	{
+		apple = Apple(height, width);
+	}
+	
+	board[appleX][appleY] = '*';
 
 	return board;
 }

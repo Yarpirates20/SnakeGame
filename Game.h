@@ -19,6 +19,7 @@ private:
 public:
 
 	Snake snake;
+	Apple apple;
 
 	Game() = default;
 	Game(int h, int w);

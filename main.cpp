@@ -7,6 +7,9 @@ using namespace std;
 int main()
 {
 	Game game = Game(10, 20);
+	unsigned seed = time(0);
+	srand(seed);
+
 	cout << "Enter the following keypresses to move: \n\n";
 	cout << "\tUP = W\n"
 		<< "\tDOWN = S\n"
