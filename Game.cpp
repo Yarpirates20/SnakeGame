@@ -10,6 +10,7 @@ Game::Game(int h, int w)
 	snake = Snake({ {0, 0}, {0, 1}, {0, 2}, {0, 3} }, UP);
 	apple = Apple(height, width);
 
+
 }
 
 void Game::render()
@@ -94,6 +95,8 @@ std::vector<std::vector<char>> Game::boardMatrix()
 	auto head = snake.head();
 	int appleX = apple.getAppleRow();
 	int appleY = apple.getAppleCol();
+	bool isEaten = false;
+
 	
 
 
@@ -138,12 +141,28 @@ std::vector<std::vector<char>> Game::boardMatrix()
 		}
 	}
 
-	while (board[appleX][appleY] != ' ')
+
+	
+	
+	while (board[appleX][appleY] != ' ' || isEaten == true)
 	{
 		apple = Apple(height, width);
+		//apple.setAppleRow(appleX);
+		//apple.setAppleCol(appleY);
+		break;
 	}
 	
+	if (get<0>(head) == appleX && get<1>(head) == appleY)
+	{
+		isEaten = true;
+	}
+	else
+	{
+		isEaten = false;
+	}
+
 	board[appleX][appleY] = '*';
+	
 
 	return board;
 }

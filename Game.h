@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include "Snake.h"
+#include "Apple.h"
+using namespace std;
 
 const char H = '\xCD';	// Double horizontal
 const char V = '\xBA';	// Double vertical
@@ -17,10 +19,8 @@ private:
 	
 
 public:
-
 	Snake snake;
 	Apple apple;
-
 	Game() = default;
 	Game(int h, int w);
 	void render();

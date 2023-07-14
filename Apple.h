@@ -1,10 +1,11 @@
 #pragma once
-#include "Game.h"
+//#include "Game.h"
+//using namespace std;
 class Apple
 {
 
 private:
-	char apple;
+	//char apple;
 	int appleRow;
 	int appleCol;
 
@@ -14,7 +15,8 @@ public:
 	Apple(int h, int w);
 	int getAppleRow();
 	int getAppleCol();
-	
+	/*void setAppleRow(int r);
+	void setAppleCol(int c);*/
 	
 };
 

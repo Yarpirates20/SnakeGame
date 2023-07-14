@@ -1,16 +1,17 @@
 #include "Apple.h"
 #include <cstdlib>
 #include <ctime>
+using namespace std;
 
 Apple::Apple(int height, int width)
 {
-	char a = '*';
+	//char a = '*';
 	/*int p = 0;*/
 
-	apple = a;
+	//apple = a;
 	/*points = p;*/
-	appleRow = rand() % height;
-	appleCol = rand() % width;
+	appleRow = std::rand() % height;
+	appleCol = std::rand() % width;
 }
 
 int Apple::getAppleRow()
