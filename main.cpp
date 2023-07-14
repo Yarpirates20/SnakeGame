@@ -20,8 +20,13 @@ int main()
 
 	while (true)
 	{
+		//char playAgain = 'y';
+		//bool isDead = false;
+
+		/*while (tolower(playAgain) == 'y' && isDead == false)
+		{*/
 		char direction;
-		
+
 
 		cout << "\n\nDirection: ";
 		cin >> direction;
@@ -59,7 +64,7 @@ int main()
 			if (game.snake.getDirection() == UP)
 			{
 				break;
-			} 
+			}
 			else
 			{
 				x = 1 + (x - 1 + 1) % game.getHeight();
@@ -110,7 +115,7 @@ int main()
 			break;
 		}
 
-		
+
 		// Copy body to vector for comparison
 		vector<tuple<int, int>> snakeVec;
 
@@ -126,7 +131,26 @@ int main()
 				if (get<0>(snakeVec[i]) == get<0>(game.snake.head()) && get<1>(snakeVec[i]) == get<1>(game.snake.head()))
 				{
 					cout << "\nYou've made one wrong move and instantly died. Welcome to real life.\n";
-					break;
+					cout << "Your score: " << game.getPoints() << endl;
+
+					cout << "\nGAME OVER\n";
+					exit(0);
+					/*isDead = true;
+					cout << "\nPlay another round? (Y/N): ";
+					cin >> playAgain;*/
+
+					/*if (tolower(playAgain) == 'n')
+					{
+						playAgain = 'n';
+						cout << "Goodbye!\n";
+						exit(0);
+					}*/
+					//break;
+					/*else if (tolower(playAgain == 'y'))
+					{
+						playAgain = 'y';
+						break;
+					}*/
 				}
 				else
 				{
@@ -134,10 +158,40 @@ int main()
 					game.render();
 				}
 			}
-
 		}
 
+		/*cout << "\nPlay another round? (Y/N): ";
+		cin >> playAgain;
 
+		if (tolower(playAgain) == 'n')
+		{
+			playAgain = 'n';
+			cout << "Goodbye!\n";
+			exit(0);
+		}*/
+		//break;
+		/*else if (tolower(playAgain == 'y'))
+		{
+			playAgain = 'y';
+			break;
+		}*/
+		/*if (tolower(playAgain) == 'y' && isDead == true)
+		{
+			break;
+		}*/
+		//}
+
+		//cout << "Your score: " << game.getPoints() << endl;
+		//
+		//char playAgain;
+		//cout << "Play another round? (Y/N): ";
+		//cin >> playAgain;
+
+		//if (tolower(playAgain) == 'n')
+		//{
+		//	cout << "Goodbye!\n";
+		//	break;
+		//}
 
 		// ###############################################
 		// TODO: Check if each x, y part of tuple, or each tuple, is equal to the first one or any other ones
@@ -157,8 +211,8 @@ int main()
 		//		}
 		//	}
 		//}
-		cout << "\u001b[2J";
-		game.render();
+		//cout << "\u001b[2J";
+		//game.render();
 
 
 	}

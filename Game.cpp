@@ -7,7 +7,7 @@ Game::Game(int h, int w)
 {
 	height = h;
 	width = w;
-	snake = Snake({ {0, 0}, {0, 1}, {0, 2}, {0, 3} }, UP);
+	snake = Snake({ {0, 0}, {0, 1}, {0, 2}, {0, 3} }, LEFT);
 	apple = Apple(height, width);
 	points = 0;
 
