@@ -27,6 +27,7 @@ public:
 	std::tuple<int, int> setDirection(std::tuple<int, int> dir);
 	std::tuple<int, int> getDirection();
 	std::tuple<int, int> head(/*std::list<std::tuple<int,int>> bList*/);
+	void addSegment();
 	//int getXcoord()
 };
 

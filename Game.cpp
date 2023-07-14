@@ -157,6 +157,7 @@ std::vector<std::vector<char>> Game::boardMatrix()
 	if (get<0>(head) == appleX && get<1>(head) == appleY)
 	{
 		isEaten = true;
+		snake.addSegment();
 		points++;
 	}
 	else

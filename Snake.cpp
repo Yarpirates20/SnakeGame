@@ -40,3 +40,13 @@ std::tuple<int, int> Snake::head(/*list<tuple<int,int>> bList*/)
 	return body.front();
 	//return bList.front();
 }
+
+void Snake::addSegment()
+{
+	int x = get<0>(body.back()) + get<0>(getDirection());
+	int y = get<1>(body.back()) + get<1>(getDirection());
+
+	tuple<int,int> segment = make_tuple(x, y);
+
+	body.push_back(segment);
+}
