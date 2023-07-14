@@ -9,6 +9,7 @@ Game::Game(int h, int w)
 	width = w;
 	snake = Snake({ {0, 0}, {0, 1}, {0, 2}, {0, 3} }, UP);
 	apple = Apple(height, width);
+	points = 0;
 
 
 }
@@ -24,6 +25,7 @@ void Game::render()
 
 	printf("Height: %d\n", height);
 	cout << "Width: " << width << endl;
+	cout << "Points: " << points << endl;
 
 	// Print matrix and border
 	// Top of border
@@ -155,6 +157,7 @@ std::vector<std::vector<char>> Game::boardMatrix()
 	if (get<0>(head) == appleX && get<1>(head) == appleY)
 	{
 		isEaten = true;
+		points++;
 	}
 	else
 	{
@@ -175,4 +178,9 @@ int Game::getHeight()
 int Game::getWidth()
 {
 	return width;
+}
+
+int Game::getPoints()
+{
+	return points;
 }

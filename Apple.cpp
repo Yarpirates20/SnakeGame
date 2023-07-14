@@ -12,6 +12,7 @@ Apple::Apple(int height, int width)
 	/*points = p;*/
 	appleRow = std::rand() % height;
 	appleCol = std::rand() % width;
+	
 }
 
 int Apple::getAppleRow()

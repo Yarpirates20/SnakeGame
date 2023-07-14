@@ -16,6 +16,7 @@ class Game
 private:
 	int height;
 	int width;
+	int points;
 	
 
 public:
@@ -27,6 +28,7 @@ public:
 	std::vector<std::vector<char>> boardMatrix();
 	int getHeight();
 	int getWidth();
+	int getPoints();
 
 };
 
